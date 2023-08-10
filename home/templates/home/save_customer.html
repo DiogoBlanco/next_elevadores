@@ -1,0 +1,12 @@
+{% extends 'home/base.html' %} {% load static %} 
+{% block title %}NextElevadores | Novo Cliente {%endblock %}
+{% load crispy_forms_tags %} 
+{% block content %} 
+{% include 'home/partials/_nav.html' %}
+
+<form method="post" class="mt-5">
+{% csrf_token %}  
+{{ form|crispy }}
+<input type="submit" class="btn btn-success" value="Cadastrar">
+</form>
+{% endblock %}

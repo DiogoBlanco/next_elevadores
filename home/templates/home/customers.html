@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %} 
+{% load static %} 
+{% block title %}NextElevadores | Clientes {%endblock %} 
+{% block content %} 
+{% include 'home/partials/_nav.html' %}
+<h1 class="text-center m-5">Clientes</h1>
+<div class="container-fluid">
+  <a href="novo_cliente"><button class="btn btn-primary m-4">Cadastrar Novo Cliente</button></a>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Email</td>
+      <td>Telefone</td>
+    </tr>
+  </thead>
+  {% for client in clients %}
+  <tbody>
+    <tr>
+      <td>{{client.name}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.phone}}</td>
+    </tr>
+  </tbody>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

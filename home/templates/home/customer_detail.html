@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %} 
+{% load static %} 
+{% block title %}NextElevadores | Clientes {%endblock %} 
+{% block content %} 
+{% include 'home/partials/_nav.html' %}
+<div class="container">
+<h1 class="m-5">{{customer.name}}</h1>
+  <p><b>ID:</b> {{ customer.id }}</p>
+  <p><b>Endereço:</b> {{ customer.address }}</p>
+  <p><b>E-mail:</b> {{ customer.email }}</p>
+  <p><b>Telefone:</b> {{ customer.phone }}</p>
+  <p><b>Cliente desde:</b> {{ customer.customer_since }}</p>
+</div>
+{% endblock %}

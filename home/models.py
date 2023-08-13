@@ -2,14 +2,20 @@ from django.db import models
 
 
 class Customer(models.Model):
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+
     def __str__(self):
         return self.name
 
-    name = models.CharField(blank=False, null=False, max_length=50)
-    address = models.CharField(blank=False, null=False, max_length=100)
+    name = models.CharField(blank=False, null=False,
+                            max_length=50, verbose_name='Nome:')
+    address = models.CharField(
+        blank=False, null=False, max_length=100, verbose_name='Endereço:')
     email = models.EmailField()
-    phone = models.CharField(max_length=30)
-    customer_since = models.DateTimeField()
+    phone = models.CharField(max_length=30, verbose_name='Telefone:')
+    customer_since = models.DateTimeField(verbose_name='Cliente desde:')
 
 
 class Contract(models.Model):

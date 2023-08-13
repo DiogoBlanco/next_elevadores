@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Customer, ModernizationContract, Contract
 from .forms import CustomerForm
 
@@ -7,17 +7,30 @@ def home(request):
     return render(request, 'home/home.html')
 
 
-def customers(request):
-    clients = Customer.objects.all()
-    return render(request, 'home/customers.html', context={'clients': clients})
+def customer_list(request):
+    customers = Customer.objects.all()
+    context = {
+        'customers': customers,
+    }
+    return render(request, 'home/customer_list.html', context)
 
 
-def save_customer(request):
-    if request.method == 'POST':
-        form = CustomerForm(request.POST)
-        if form.is_valid():
-            new_customer = form.save()
-            return redirect('clientes')
-    else:
-        form = CustomerForm()
-    return render(request, 'home/save_customer.html', context={'form': form})
+def customer_detail(request, customer_id):
+    customer = get_object_or_404(
+        Customer, pk=customer_id
+    )
+    context = {
+        'customer': customer,
+    }
+    return render(request, 'home/customer_detail.html', context)
+
+
+def create_customer(request):
+    form = CustomerForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('/customers')
+    context = {
+        'form': form
+    }
+    return render(request, 'home/customer_form.html', context)

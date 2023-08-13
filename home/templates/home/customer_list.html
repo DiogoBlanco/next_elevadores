@@ -4,22 +4,24 @@
 {% block content %} 
 {% include 'home/partials/_nav.html' %}
 <h1 class="text-center m-5">Clientes</h1>
-<div class="container-fluid">
-  <a href="novo_cliente"><button class="btn btn-primary m-4">Cadastrar Novo Cliente</button></a>
+<div class="container">
+  <a href="/customers/create_customer"><button class="btn btn-primary m-4">Cadastrar Novo Cliente</button></a>
 <table class="table">
   <thead>
     <tr>
+      <td>ID</td>
       <td>Nome</td>
       <td>Email</td>
       <td>Telefone</td>
     </tr>
   </thead>
-  {% for client in clients %}
+  {% for customer in customers %}
   <tbody>
     <tr>
-      <td>{{client.name}}</td>
-      <td>{{client.email}}</td>
-      <td>{{client.phone}}</td>
+      <td><a href="{% url 'home:customer' customer.id %}">{{customer.pk}}</a></td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.phone}}</td>
     </tr>
   </tbody>
 {% endfor %}

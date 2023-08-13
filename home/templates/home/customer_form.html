@@ -4,9 +4,11 @@
 {% block content %} 
 {% include 'home/partials/_nav.html' %}
 
-<form method="post" class="mt-5">
-{% csrf_token %}  
-{{ form|crispy }}
-<input type="submit" class="btn btn-success" value="Cadastrar">
-</form>
+<div class="container">
+  <form method="post" class="mt-5">
+  {% csrf_token %}  
+  {{ form|crispy }}
+  <input type="submit" class="btn btn-success" value="Cadastrar">
+  </form>
+</div>
 {% endblock %}

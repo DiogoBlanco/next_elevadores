@@ -6,7 +6,7 @@
 {% include 'home/partials/_nav.html' %}
 
 <div class="container">
-  <form method="post" class="mt-5">
+  <form method="post" class="mt-5 p-4 bg-body container rounded-3 shadow">
   {% csrf_token %}  
   {{ form|crispy }}
   <input type="submit" class="btn btn-success" value="Salvar">

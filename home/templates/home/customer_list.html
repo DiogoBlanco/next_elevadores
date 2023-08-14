@@ -6,10 +6,10 @@
 <h1 class="text-center m-5">Clientes</h1>
 <div class="container">
   <a href="/customers/create_customer"><button class="btn btn-primary m-4">Cadastrar Novo Cliente</button></a>
-<table class="table shadow-lg">
+<table class="table shadow rounded-3 overflow-hidden">
   <thead class="text-center">
     <tr class="table-info">
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
       <th scope="col">Telefone</th>
@@ -18,8 +18,8 @@
   {% for customer in customers %}
   <tbody class="text-center">
     <tr>
-      <td><a href="{% url 'home:customer' customer.id %}">{{customer.pk}}</a></td>
-      <td>{{customer.name}}</td>
+      <td><a class="link-info link-offset-2" href="{% url 'home:customer' customer.id %}">{{customer.pk}}</a></td>
+      <td>{{customer.first_name}} {{customer.last_name}}</td>
       <td>{{customer.email}}</td>
       <td>{{customer.phone}}</td>
     </tr>

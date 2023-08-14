@@ -3,14 +3,24 @@
 {% block title %}NextElevadores | {{customer.name}} {%endblock %} 
 {% block content %} 
 {% include 'home/partials/_nav.html' %}
-<div class="container">
-<h1 class="m-5">{{customer.name}}</h1>
-  <p><b>ID:</b> {{ customer.id }}</p>
-  <p><b>Endereço:</b> {{ customer.address }}</p>
-  <p><b>E-mail:</b> {{ customer.email }}</p>
-  <p><b>Telefone:</b> {{ customer.phone }}</p>
-  <p><b>Cliente desde:</b> {{ customer.customer_since }}</p>
-  <a class="btn btn-warning m-3" href="{% url 'home:update_customer' customer.id %}" role="button">Editar</a>
-  <a class="btn btn-danger m-3" href="" role="button">Apagar</a>
+<div class="container bg-body p-4 mt-4 rounded-3 shadow">
+  <h1 class="m-4 text-start fs-2">{{customer.first_name}} {{customer.last_name}}</h1>
+  <div class="container">
+    <p><b>ID:</b> {{ customer.id }}</p><hr>
+    <p><b>Endereço:</b> {{ customer.address }}</p><hr>
+    <p><b>Cidade:</b> {{ customer.city }}</p><hr>
+    <p><b>Estado:</b> {{ customer.state }}</p><hr>
+    <p><b>Telefone:</b> {{ customer.phone }}</p><hr>
+    <p><b>E-mail:</b> {{ customer.email }}</p><hr>
+    <p><b>Tipo de Contrato:</b> {{ customer.contract }}</p><hr>
+    <p><b>Valor:</b> {{ customer.price }}</p><hr>
+    <p><b>Cliente desde:</b> {{ customer.start_date }}</p><hr>
+    <p><b>Vencimento do Contrato:</b> {{ customer.expiration_date }}</p><hr>
+    <p><b>Data de Renovação:</b> {{ customer.renewal_date }}</p><hr>
+    <p><b>Quantidade de Elevadores:</b> {{ customer.elevators_qty }}</p><hr>
+    <p><b>Marca dos Elevadores:</b> {{ customer.elevators_brand }}</p><hr>
+    <a class="btn btn-warning m-2" href="{% url 'home:update_customer' customer.id %}" role="button">Editar</a>
+    <a class="btn btn-danger m-2" href="" role="button">Apagar</a>
+  </div>
 </div>
 {% endblock %}

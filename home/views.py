@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Customer, ModernizationContract, Contract
 from .forms import CustomerForm
+from .models import Customer
 
 
 def home(request):

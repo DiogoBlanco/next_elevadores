@@ -6,17 +6,17 @@
 <h1 class="text-center m-5">Clientes</h1>
 <div class="container">
   <a href="/customers/create_customer"><button class="btn btn-primary m-4">Cadastrar Novo Cliente</button></a>
-<table class="table">
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>Nome</td>
-      <td>Email</td>
-      <td>Telefone</td>
+<table class="table shadow-lg">
+  <thead class="text-center">
+    <tr class="table-info">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
     </tr>
   </thead>
   {% for customer in customers %}
-  <tbody>
+  <tbody class="text-center">
     <tr>
       <td><a href="{% url 'home:customer' customer.id %}">{{customer.pk}}</a></td>
       <td>{{customer.name}}</td>

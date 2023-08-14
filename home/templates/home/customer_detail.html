@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %} 
 {% load static %} 
-{% block title %}NextElevadores | Clientes {%endblock %} 
+{% block title %}NextElevadores | {{customer.name}} {%endblock %} 
 {% block content %} 
 {% include 'home/partials/_nav.html' %}
 <div class="container">
@@ -10,5 +10,7 @@
   <p><b>E-mail:</b> {{ customer.email }}</p>
   <p><b>Telefone:</b> {{ customer.phone }}</p>
   <p><b>Cliente desde:</b> {{ customer.customer_since }}</p>
+  <a class="btn btn-warning m-3" href="{% url 'home:update_customer' customer.id %}" role="button">Editar</a>
+  <a class="btn btn-danger m-3" href="" role="button">Apagar</a>
 </div>
 {% endblock %}

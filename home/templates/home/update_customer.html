@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %} 
 {% load static %} 
-{% block title %}NextElevadores | Novo Cliente {%endblock %}
+{% block title %}NextElevadores | Editar {%endblock %}
 {% load crispy_forms_tags %} 
 {% block content %} 
 {% include 'home/partials/_nav.html' %}
@@ -9,7 +9,7 @@
   <form method="post" class="mt-5">
   {% csrf_token %}  
   {{ form|crispy }}
-  <input type="submit" class="btn btn-success" value="Cadastrar">
+  <input type="submit" class="btn btn-success" value="Salvar">
   </form>
 </div>
 {% endblock %}

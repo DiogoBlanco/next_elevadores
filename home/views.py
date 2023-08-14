@@ -34,3 +34,15 @@ def create_customer(request):
         'form': form
     }
     return render(request, 'home/customer_form.html', context)
+
+
+def update_customer(request, customer_id):
+    customer = get_object_or_404(Customer, pk=customer_id)
+    form = CustomerForm(request.POST or None, instance=customer)
+    if form.is_valid():
+        form.save()
+        return redirect('/customers')
+    context = {
+        'form': form
+    }
+    return render(request, 'home/update_customer.html', context)

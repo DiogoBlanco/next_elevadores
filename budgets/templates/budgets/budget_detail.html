@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Orçamentos{% endblock %}
+{% load crispy_forms_tags %} 
+{% block nav %}{% include 'home/partials/_nav.html' %}{% endblock nav %}
+
+{% block content %}
+<div class="container bg-body p-4 mt-5 mb-5 rounded-3 shadow">
+  <h1 class="m-4 text-start fs-2">Orçamento de {{budget.customer}}</h1>
+  <div class="container">
+    <p><b>N do Orçamento:</b> {{ budget.id }}</p><hr>
+    <p><b>Cliente:</b> {{ budget.customer }}</p><hr>
+    <p><b>Descrição dos Serviços:</b> {{ budget.description }}</p><hr>
+    <p><b>Prazo:</b> {{ budget.deadline }}</p><hr>
+    <p><b>Valor:</b> {{ budget.value }}</p><hr>
+    <p><b>Parcelas:</b> {{ budget.parcels }}</p><hr>
+    <p><b>Valor das Parcelas:</b> {{ budget.parcels_value }}</p><hr>
+    <a class="btn btn-warning m-2" href="" role="button">Editar</a>
+    <a class="btn btn-danger m-2" href="" role="button">Apagar</a>
+  </div>
+</div>
+{% endblock content %}

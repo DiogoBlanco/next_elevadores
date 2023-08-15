@@ -1,12 +1,12 @@
-{% extends 'budgets/base.html' %}
+{% extends 'home/base.html' %}
 {% load static %}
 {% block title %}Orçamentos{% endblock %}
 {% load crispy_forms_tags %} 
-{% block content %}
-{% include 'partials/_nav.html' %}
+{% block nav %}{% include 'home/partials/_nav.html' %}{% endblock nav %}
 
+{% block content %}
 <div class="container ">
-  <form method="post" class="mt-3 p-4 bg-body container rounded-3 shadow">
+  <form method="post" class="mt-5 mb-5 p-4 bg-body container rounded-3 shadow">
   {% csrf_token %}  
   {{ form|crispy }}
   <input type="submit" class="btn btn-success" value="Salvar">

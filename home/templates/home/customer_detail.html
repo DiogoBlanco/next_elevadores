@@ -1,9 +1,11 @@
 {% extends 'home/base.html' %} 
 {% load static %} 
 {% block title %}NextElevadores | {{customer.name}} {%endblock %} 
+
+{% block nav %}{% include 'home/partials/_nav.html' %}{% endblock nav %}
+
 {% block content %} 
-{% include 'home/partials/_nav.html' %}
-<div class="container bg-body p-4 mt-4 rounded-3 shadow">
+<div class="container bg-body p-4 mt-5 mb-5 rounded-3 shadow">
   <h1 class="m-4 text-start fs-2">{{customer.first_name}} {{customer.last_name}}</h1>
   <div class="container">
     <p><b>ID:</b> {{ customer.id }}</p><hr>

@@ -14,7 +14,9 @@
     <title>{% block title %}Base{% endblock %}</title>
   </head>
   <body class="bg-body-secondary">
-    <main class="container">
+    {% block nav %}
+    {% endblock nav %}
+    <main class="container-fluid">
       {% block content %} 
       {% endblock %}
     </main>

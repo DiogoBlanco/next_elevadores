@@ -9,6 +9,6 @@ urlpatterns = [
          name='criar_cliente_cpf'),
     path('criar_cliente_cnpj/', views.criar_cliente_cnpj,
          name='criar_cliente_cnpj'),
-    path('detalhes_cliente/<int:cliente_id>', views.detalhes_cliente,
+    path('detalhes_cliente/<int:cliente_id>/', views.detalhes_cliente,
          name='detalhes_cliente'),
 ]

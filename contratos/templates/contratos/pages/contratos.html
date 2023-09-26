@@ -1,0 +1,34 @@
+{% extends 'global/pages/base.html' %}
+{% block title %}<title>Next Elevadores | Contratos</title>{% endblock title %}
+{% block content %}
+<main class="container bg-body-secondary">
+<h1 class="text-center p-5"><i class="fa-solid fa-people-group"></i> Contratos</h1>
+<div class="dropdown dropup">
+<a class="btn btn-primary mb-3 ms-3" href="{% url 'contratos:criar_contrato' %}" role="button">Novo Contrato</a>
+</div>
+<div class=" container table-responsive">
+    <table class="table table-hover caption-top mb-5 shadow">
+        <caption>Lista de Contratos</caption>
+        <thead class="table-dark text-center">
+            <tr>
+            <th scope="col"><i class="fa-solid fa-id-card"></i> Cliente</th>
+            <th scope="col"><i class="fa-solid fa-envelope"></i> Valor</th>
+            <th scope="col"><i class="fa-solid fa-phone"></i> Início</th>
+            <th scope="col"><i class="fa-solid fa-circle-info"></i> Detalhes</th>
+            </tr>
+        </thead>
+        {% for contrato in contratos %}
+        <tbody class="table-group-divider text-center">
+            <tr>
+            <th scope="row">{{contrato.cliente}}</th>
+            <td>{{contrato.valor}}</td>
+            <td>{{contrato.cliente.data_de_criacao}}</td>
+            <td><a href="#">Detalhes</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</main>
+{% endblock content %}
+

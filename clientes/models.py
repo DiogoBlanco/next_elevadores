@@ -7,31 +7,30 @@ class Cliente(models.Model):
     endereco = models.CharField(max_length=50, verbose_name='Endereço')
     telefone = models.CharField(max_length=15, verbose_name='Telefone')
     email = models.EmailField()
-    data_de_inicio = models.DateField(verbose_name='Data de Início')
-    vigencia = models.DateField(verbose_name='Vigência')
-    data_de_renovacao = models.DateField(verbose_name='Data de Renovação')
+    data_de_criacao = models.DateField(
+        verbose_name='Data de Criação', auto_now_add=True)
     marca_dos_equipamentos = models.CharField(
         choices=[('Atlas', 'Atlas'), ('Otis', 'Otis'),
                  ('Thyessen', 'Thyessen')], max_length=8)
     quantidade_de_elevadores = models.PositiveIntegerField()
 
+    def __str__(self):
+        return self.nome + ' ' + self.sobrenome
+
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
-
-        def __str__(self):
-            return self.nome + ' ' + self.sobrenome
 
 
 class ClientePF(Cliente):
     cpf = models.CharField(max_length=14, unique=True, verbose_name='CPF')
 
+    def __str__(self):
+        return self.nome + ' ' + self.sobrenome
+
     class Meta:
         verbose_name = 'Cliente CPF'
         verbose_name_plural = 'Clientes CPF'
-
-    def __str__(self):
-        return self.nome + ' ' + self.sobrenome
 
 
 class ClientePJ(Cliente):
@@ -39,9 +38,9 @@ class ClientePJ(Cliente):
     razao_social = models.CharField(
         max_length=100, verbose_name='Razão Social')
 
+    def __str__(self):
+        return self.nome + ' ' + self.sobrenome
+
     class Meta:
         verbose_name = 'Cliente CNPJ'
         verbose_name_plural = 'Clientes CNPJ'
-
-    def __str__(self):
-        return self.nome + ' ' + self.sobrenome

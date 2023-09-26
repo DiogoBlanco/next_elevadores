@@ -30,26 +30,6 @@ class ClientePFForm(forms.ModelForm):
 
 
 class ClientePJForm(forms.ModelForm):
-    def __init__(self, *args):
-        super().__init__(*args)
-        self.fields['data_de_inicio'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
-        self.fields['vigencia'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
-        self.fields['data_de_renovacao'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
 
     class Meta:
         model = ClientePJ

@@ -7,8 +7,8 @@ class Cliente(models.Model):
     endereco = models.CharField(max_length=50, verbose_name='Endereço')
     telefone = models.CharField(max_length=15, verbose_name='Telefone')
     email = models.EmailField()
-    data_de_criacao = models.DateField(
-        verbose_name='Data de Criação', auto_now_add=True)
+    data_de_inicio = models.DateField(
+        verbose_name='Data de Criação')
     marca_dos_equipamentos = models.CharField(
         choices=[('Atlas', 'Atlas'), ('Otis', 'Otis'),
                  ('Thyessen', 'Thyessen')], max_length=8)

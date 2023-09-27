@@ -3,37 +3,21 @@ from .models import ClientePF, ClientePJ
 
 
 class ClientePFForm(forms.ModelForm):
-    def __init__(self, *args):
-        super().__init__(*args)
-        self.fields['data_de_inicio'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
-        self.fields['vigencia'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
-        self.fields['data_de_renovacao'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
 
     class Meta:
         model = ClientePF
-        fields = '__all__'
+        fields = ['nome', 'sobrenome', 'cpf', 'endereco',
+                  'telefone', 'email', 'data_de_inicio',
+                  'marca_dos_equipamentos', 'quantidade_de_elevadores']
 
 
 class ClientePJForm(forms.ModelForm):
 
     class Meta:
         model = ClientePJ
-        fields = '__all__'
+        fields = ['nome', 'cnpj', 'razao_social', 'endereco',
+                  'telefone', 'email', 'data_de_inicio',
+                  'marca_dos_equipamentos', 'quantidade_de_elevadores']
 
 
 class ClienteForm(forms.ModelForm):
@@ -44,7 +28,6 @@ class ClienteForm(forms.ModelForm):
     email = forms.EmailField()
     data_de_inicio = forms.DateInput()
     vigencia = forms.DateInput()
-    data_de_renovacao = forms.DateInput()
     marca_dos_equipamentos = forms.ChoiceField(
         choices=[('Atlas', 'Atlas'),
                  ('Otis', 'Otis'),

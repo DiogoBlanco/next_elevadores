@@ -31,7 +31,6 @@ def criar_cliente_cnpj(request):
             return redirect('/clientes')
     else:
         form = ClientePJForm()
-
     return render(request, 'clientes/pages/criar_cliente_cnpj.html',
                   context={'form': form})
 

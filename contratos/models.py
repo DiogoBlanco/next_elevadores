@@ -13,7 +13,10 @@ class ContratoAnual(models.Model):
     cliente = models.ForeignKey(
         Cliente, on_delete=models.DO_NOTHING, verbose_name='Cliente')
     valor = models.PositiveIntegerField()
-    vigencia = models.DateField(verbose_name='Vigência')
+    vigencia = models.CharField(
+        choices=[('12 meses', '12 meses'), ('24 meses', '24 meses'),
+                 ('36 meses', '36 meses'), ('48 meses', '48 meses')],
+        max_length=8, null=True)
     data_de_renovacao = models.DateField(verbose_name='Data de Renovação')
     mes_reajuste = models.DateField(verbose_name='Mês de Reajuste')
     tipo_contrato = models.ForeignKey(TipoContrato, on_delete=models.CASCADE)

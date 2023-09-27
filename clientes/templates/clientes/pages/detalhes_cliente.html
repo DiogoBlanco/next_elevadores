@@ -10,7 +10,8 @@
   <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Endereço:</b> {{cliente.endereco}}</li>
   <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Telefone:</b> {{cliente.telefone}}</li>
   <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Email:</b> {{cliente.email}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_criacao}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_inicio|date:'d/m/Y'}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Vigência:</b> {{cliente.vigencia}}</li>
   <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
   <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
 </ul>
@@ -21,7 +22,8 @@
   <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Endereço:</b> {{cliente.endereco}}</li>
   <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Telefone:</b> {{cliente.telefone}}</li>
   <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Email:</b> {{cliente.email}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_criacao|date:'d/m/Y'}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_inicio|date:'d/m/Y'}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Vigência:</b> {{cliente.vigencia}}</li>
   <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
   <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
 </ul>

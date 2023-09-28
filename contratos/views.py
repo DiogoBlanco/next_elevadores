@@ -21,3 +21,11 @@ def criar_contrato(request):
         form = ContratoForm()
     return render(request, 'contratos/pages/criar_contrato.html',
                   context={'form': form})
+
+
+def detalhes_contrato(request, contrato_id):
+    contrato = ContratoAnual.objects.get(pk=contrato_id)
+    context = {
+        'contrato': contrato
+    }
+    return render(request, 'contratos/pages/detalhes_contratos.html', context)

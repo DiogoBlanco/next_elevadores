@@ -5,12 +5,6 @@ from .models import ContratoAnual
 class ContratoForm(forms.ModelForm):
     def __init__(self, *args):
         super().__init__(*args)
-        self.fields['vigencia'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
         self.fields['data_de_renovacao'].widget = forms.widgets.DateInput(
             attrs={
                 'type': 'date',
@@ -26,4 +20,7 @@ class ContratoForm(forms.ModelForm):
 
     class Meta:
         model = ContratoAnual
-        fields = '__all__'
+        fields = [
+            'cliente', 'valor', 'vigencia', 'data_de_renovacao', 'mes_reajuste',
+            'tipo_contrato'
+        ]

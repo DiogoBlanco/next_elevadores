@@ -1,31 +1,17 @@
 {% extends 'global/pages/base.html' %}
-{% block title %}<title>Next Elevadores | {{cliente.nome}} {{cliente.sobrenome}}</title>{% endblock title %}
+{% block title %}<title>Next Elevadores | Contrato de {{contrato.cliente.nome}} {{contrato.cliente.sobrenome}}</title>{% endblock title %}
 {% block content %}
 <main class="container bg-body-secondary">
-<h1 class="text-center p-5"><i class="fa-solid fa-person"></i> {{cliente.nome}} {{cliente.sobrenome}}</h1>
-{% if cliente.clientepj %}
+<h1 class="text-center p-5"><i class="fa-solid fa-person"></i> Contrato de {{contrato.cliente.nome}} {{contrato.cliente.sobrenome}}</h1>
 <ul class="list-group">
-  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>CNPJ:</b> {{cliente.clientepj.cnpj}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>Razão Social:</b> {{cliente.clientepj.razao_social}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Endereço:</b> {{cliente.endereco}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Telefone:</b> {{cliente.telefone}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Email:</b> {{cliente.email}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_criacao}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>Valor:</b> R$ {{contrato.valor}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>Vigência:</b> {{contrato.vigencia}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Data de Renovação:</b> {{contrato.data_de_renovacao}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Mês De Reajuste:</b> {{contrato.mes_reajuste}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Tipo De Contrato:</b> {{contrato.tipo_contrato}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Marca dos Equipamentos:</b> {{contrato.cliente.marca_dos_equipamentos}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Quantidade de Elevadores:</b> {{contrato.cliente.quantidade_de_elevadores}}</li>
 </ul>
-{% endif %}
-{% if cliente.clientepf %}
-<ul class="list-group">
-  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>CPF:</b> {{cliente.clientepf.cpf}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Endereço:</b> {{cliente.endereco}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Telefone:</b> {{cliente.telefone}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Email:</b> {{cliente.email}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_criacao|date:'d/m/Y'}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
-</ul>
-{% endif %}
 </div>
 <button class="btn btn-warning mt-4" type="button">Editar</button>
 <button class="btn btn-danger mt-4 ms-2" type="button">Apagar</button>

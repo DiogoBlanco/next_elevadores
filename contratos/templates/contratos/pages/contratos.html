@@ -11,6 +11,7 @@
         <caption>Lista de Contratos</caption>
         <thead class="table-dark text-center">
             <tr>
+            <th scope="col"><i class="fa-solid fa-id-card"></i> Num</th>
             <th scope="col"><i class="fa-solid fa-id-card"></i> Cliente</th>
             <th scope="col"><i class="fa-solid fa-envelope"></i> Valor</th>
             <th scope="col"><i class="fa-solid fa-phone"></i> Início</th>
@@ -20,10 +21,11 @@
         {% for contrato in contratos %}
         <tbody class="table-group-divider text-center">
             <tr>
+            <th scope="row">{{contrato.id}}</th>
             <th scope="row">{{contrato.cliente}}</th>
             <td>{{contrato.valor}}</td>
-            <td>{{contrato.cliente.data_de_criacao}}</td>
-            <td><a href="#">Detalhes</a></td>
+            <td>{{contrato.cliente.data_de_inicio|date:'d/m/Y'}}</td>
+            <td><a href="{% url "contratos:detalhes_contrato" contrato.id %}">Detalhes</a></td>
             </tr>
         {% endfor %}
         </tbody>

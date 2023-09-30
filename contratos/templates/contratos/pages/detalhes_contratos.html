@@ -2,18 +2,19 @@
 {% block title %}<title>Next Elevadores | Contrato de {{contrato.cliente.nome}} {{contrato.cliente.sobrenome}}</title>{% endblock title %}
 {% block content %}
 <main class="container bg-body-secondary">
-<h1 class="text-center p-5"><i class="fa-solid fa-person"></i> Contrato de {{contrato.cliente.nome}} {{contrato.cliente.sobrenome}}</h1>
+<h1 class="text-center p-5"><i class="fa-solid fa-file-contract"></i> Contrato de {{contrato.cliente.nome}} {{contrato.cliente.sobrenome}}</h1>
 <ul class="list-group">
-  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>Valor:</b> R$ {{contrato.valor}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>Vigência:</b> {{contrato.vigencia}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-building"></i> <b>Data de Renovação:</b> {{contrato.data_de_renovacao}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-phone"></i> <b>Mês De Reajuste:</b> {{contrato.mes_reajuste}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Tipo De Contrato:</b> {{contrato.tipo_contrato}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Marca dos Equipamentos:</b> {{contrato.cliente.marca_dos_equipamentos}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-envelope"></i> <b>Quantidade de Elevadores:</b> {{contrato.cliente.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-money-bill-1-wave"></i></i> <b>Valor:</b> R$ {{contrato.valor}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-hourglass-end"></i> <b>Vigência:</b> {{contrato.vigencia}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Renovação:</b> {{contrato.data_de_renovacao}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-calendar"></i> <b>Mês De Reajuste:</b> {{contrato.mes_reajuste}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-file-signature"></i> <b>Tipo De Contrato:</b> {{contrato.tipo_contrato}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{contrato.cliente.marca_dos_equipamentos}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{contrato.cliente.quantidade_de_elevadores}}</li>
 </ul>
 </div>
 <button class="btn btn-warning mt-4" type="button">Editar</button>
 <button class="btn btn-danger mt-4 ms-2" type="button">Apagar</button>
 </main>
 {% endblock content %}
+Z

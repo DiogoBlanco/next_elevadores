@@ -2,7 +2,7 @@
 {% block title %}<title>Next Elevadores | {{cliente.nome}} {{cliente.sobrenome}}</title>{% endblock title %}
 {% block content %}
 <main class="container bg-body-secondary">
-<h1 class="text-center p-5"><i class="fa-solid fa-person"></i> {{cliente.nome}} {{cliente.sobrenome}}</h1>
+<h1 class="text-center p-5"><i class="fa-solid fa-user"></i></i> {{cliente.nome}} {{cliente.sobrenome}}</h1>
 {% if cliente.clientepj %}
 <ul class="list-group">
   <li class="list-group-item"><i class="fa-solid fa-id-card"></i> <b>CNPJ:</b> {{cliente.clientepj.cnpj}}</li>
@@ -13,6 +13,7 @@
   <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_inicio|date:'d/m/Y'}}</li>
   <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
   <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-file-signature"></i></i> <a href="#"><b>Contrato</b></a></li>
 </ul>
 {% endif %}
 {% if cliente.clientepf %}
@@ -24,6 +25,7 @@
   <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Criação:</b> {{cliente.data_de_inicio|date:'d/m/Y'}}</li>
   <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{cliente.marca_dos_equipamentos}}</li>
   <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{cliente.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-file-signature"></i></i> <a href="#"><b>Contrato</b></a></li>
 </ul>
 {% endif %}
 </div>

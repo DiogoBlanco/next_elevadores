@@ -11,4 +11,10 @@ urlpatterns = [
          name='criar_cliente_cnpj'),
     path('detalhes_cliente/<int:cliente_id>/', views.detalhes_cliente,
          name='detalhes_cliente'),
+    path('atualizar/<int:cliente_id>/',
+         views.atualizar_cliente,
+         name='atualizar_cliente'),
+    path('apagar/<int:cliente_id>/',
+         views.apagar_cliente,
+         name='apagar_cliente'),
 ]

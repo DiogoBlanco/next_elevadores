@@ -29,7 +29,7 @@
 </ul>
 {% endif %}
 </div>
-<button class="btn btn-warning mt-4" type="button">Editar</button>
-<button class="btn btn-danger mt-4 ms-2" type="button">Apagar</button>
+<button class="btn btn-warning mt-4" type="button"><a class="text-decoration-none text-dark" href="{% url "clientes:atualizar_cliente" cliente.id %}">Editar</a></button>
+<button class="btn btn-danger mt-4 ms-2" type="button"><a class="text-decoration-none text-white" href="{% url "clientes:apagar_cliente" cliente.id %}">Apagar</a></button>
 </main>
 {% endblock content %}

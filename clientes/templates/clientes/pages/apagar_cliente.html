@@ -1,0 +1,15 @@
+{% extends 'global/pages/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}<title>Next Elevadores | Apagar Cliente</title>{% endblock title %}
+{% block content %}
+<main class="container bg-body-secondary">
+<h1 class="text-center p-5">Apagar Cliente | {{cliente.nome}} {{cliente.sobrenome}}</h1>
+<form class="mb-5" method="post">
+    {% csrf_token %}
+    <h3>Tem certeza que deseja apagar este cliente?</h3>
+    <button class="btn btn-danger m-3" type="submit">Apagar</button>
+    <button class="btn btn-info"><a class="text-decoration-none" href="{% url 'clientes:clientes' %}">Voltar</a></button>
+</form>
+</main>
+{% endblock content %}

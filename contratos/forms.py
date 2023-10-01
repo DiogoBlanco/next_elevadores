@@ -11,16 +11,7 @@ class ContratoForm(forms.ModelForm):
                 'placeholder': 'dd-mm-yyyy',
             }
         )
-        self.fields['mes_reajuste'].widget = forms.widgets.DateInput(
-            attrs={
-                'type': 'date',
-                'placeholder': 'dd-mm-yyyy',
-            }
-        )
 
     class Meta:
         model = ContratoAnual
-        fields = [
-            'cliente', 'valor', 'vigencia', 'data_de_renovacao', 'mes_reajuste',
-            'tipo_contrato'
-        ]
+        fields = '__all__'

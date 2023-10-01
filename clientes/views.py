@@ -1,4 +1,3 @@
-from django.views.generic.edit import UpdateView
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ClientePFForm, ClientePJForm, ClienteForm
 from .models import Cliente, ClientePF, ClientePJ

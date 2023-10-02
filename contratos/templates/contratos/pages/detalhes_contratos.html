@@ -9,12 +9,14 @@
   <li class="list-group-item"><i class="fa-solid fa-calendar-plus"></i> <b>Data de Renovação:</b> {{contrato.data_de_renovacao}}</li>
   <li class="list-group-item"><i class="fa-solid fa-calendar"></i> <b>Mês De Reajuste:</b> {{contrato.mes_reajuste}}</li>
   <li class="list-group-item"><i class="fa-solid fa-file-signature"></i> <b>Tipo De Contrato:</b> {{contrato.tipo_contrato}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Equipamentos:</b> {{contrato.cliente.marca_dos_equipamentos}}</li>
-  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{contrato.cliente.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-bookmark"></i> <b>Marca dos Elevadores:</b> {{contrato.marca_dos_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Quantidade de Elevadores:</b> {{contrato.quantidade_de_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Modelo dos Elevadores:</b> {{contrato.modelo_dos_elevadores}}</li>
+  <li class="list-group-item"><i class="fa-solid fa-list-ol"></i> <b>Observações:</b> {{contrato.observacoes}}</li>
 </ul>
 </div>
-<button class="btn btn-warning mt-4" type="button">Editar</button>
-<button class="btn btn-danger mt-4 ms-2" type="button">Apagar</button>
+<button class="btn btn-warning mt-4" type="button"><a class="text-decoration-none text-dark" href="{% url "contratos:atualizar_contrato" contrato.id %}">Editar</a></button>
+<button class="btn btn-danger mt-4 ms-2" type="button"><a class="text-decoration-none text-white" href="{% url "contratos:apagar_contrato" contrato.id %}">Apagar</a></button>
 </main>
 {% endblock content %}
 Z

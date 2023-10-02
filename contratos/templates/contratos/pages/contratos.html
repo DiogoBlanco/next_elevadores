@@ -24,7 +24,7 @@
             <th scope="row">{{contrato.id}}</th>
             <th scope="row">{{contrato.cliente}}</th>
             <td>{{contrato.valor}}</td>
-            <td>{{contrato.cliente.data_de_inicio|date:'d/m/Y'}}</td>
+            <td>{{contrato.cliente.data_de_criacao|date:'d/m/Y'}}</td>
             <td><a href="{% url "contratos:detalhes_contrato" contrato.id %}">Detalhes</a></td>
             </tr>
         {% endfor %}

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'modernizacao',
     'orcamentos',
     'produtos',
+    'dashboard',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

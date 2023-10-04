@@ -1,1 +1,0 @@
-web: gunicorn next_elevadores.wsgi
